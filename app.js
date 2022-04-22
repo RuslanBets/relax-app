@@ -3,6 +3,8 @@ const buttons = document.querySelector('.buttons');
 const buttonPlay = document.querySelector('.button-play');
 const video = document.querySelector('.video__item');
 const audio = document.querySelector('.audio');
+const moodGreen = document.querySelector('._green');
+const moodBlue = document.querySelector('._blue');
 let flag = true;
 let miliSeconds = 600000;
 let secondsFuture = Date.now() + 600000;
@@ -31,7 +33,7 @@ buttonPlay.addEventListener('click', () => {
 		data.btnPlayOrStop = "./icon.svg/pause.svg";
 		video.play();
 		audio.play();
-		interval = setInterval(timer, 1000);
+		interval = setInterval(timer, 100);
 	} else if (!flag) {
 		buttonPlay.src = "./icon.svg/play.svg";
 		flag = true;
@@ -62,3 +64,18 @@ function timer() {
 	time.innerHTML = min + ':' + sec;
 	return [min, sec];
 }
+
+moodGreen.onclick = () => {
+	video.children[0].src = "./video/video-forest.webm";
+	video.children[1].src = "./video/video-forest.mp4";
+	audio.src = "./music/forest.mp3"
+	video.load()
+}
+moodBlue.onclick = () => {
+	video.children[0].src = "./video/video-maunt.webm";
+	video.children[1].src = "./video/video-maunt.mp4";
+	audio.src = "./music/maunt.mp3"
+	video.load()
+}
+
+
