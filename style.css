@@ -85,6 +85,12 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+.circle {
+	transform-origin: center;
+	transform: rotate(-90deg);
+}
+
 .time {
 	position: absolute;
 	bottom: 10%;
@@ -105,9 +111,11 @@
 }
 ._green {
 	background-color: green;
+	cursor: pointer;
 }
 ._blue {
 	background-color: blue;
+	cursor: pointer;
 }
 
 
